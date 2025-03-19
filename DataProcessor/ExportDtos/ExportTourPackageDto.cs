@@ -5,7 +5,7 @@ namespace TravelAgency.DataProcessor.ExportDtos
     [XmlType("TourPackage")]
     public class ExportTourPackageDto
     {
-        [XmlElement("n")]
+        [XmlElement("Name")]
         public string Name { get; set; } = null!;
 
         [XmlElement("Description")]
