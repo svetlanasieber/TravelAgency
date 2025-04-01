@@ -34,7 +34,7 @@ namespace TravelAgency.DataProcessor
                     continue;
                 }
 
-                // Check for duplicates
+             
                 if (validCustomers.Any(c => c.FullName == customerDto.FullName || 
                                            c.Email == customerDto.Email || 
                                            c.PhoneNumber == customerDto.PhoneNumber) ||
@@ -79,7 +79,7 @@ namespace TravelAgency.DataProcessor
                     continue;
                 }
 
-                // Parse date
+               
                 DateTime bookingDate;
                 bool isValidDate = DateTime.TryParseExact(
                     bookingDto.BookingDate,
@@ -94,7 +94,7 @@ namespace TravelAgency.DataProcessor
                     continue;
                 }
 
-                // Find customer
+             
                 Customer customer = context.Customers
                     .FirstOrDefault(c => c.FullName == bookingDto.CustomerName);
 
@@ -104,7 +104,7 @@ namespace TravelAgency.DataProcessor
                     continue;
                 }
 
-                // Find tour package
+              
                 TourPackage tourPackage = context.TourPackages
                     .FirstOrDefault(tp => tp.PackageName == bookingDto.TourPackageName);
 
